@@ -8,7 +8,6 @@ public class FoodMapper extends EntityToDTOMapperImpl<FoodDTOInput, FoodDTO, Foo
     public FoodDTO toDTO(FoodDTOInput dtoInput) {
         FoodDTO dto = new FoodDTO();
         dto.setId(dtoInput.getId());
-
         return dto;
     }
 

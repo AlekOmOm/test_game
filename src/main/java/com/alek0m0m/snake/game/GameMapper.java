@@ -9,21 +9,27 @@ public class GameMapper extends EntityToDTOMapperImpl<GameDTOInput, GameDTO, Gam
     @Override
     public Game toEntity(GameDTO gameDTO) {
         Game game = new Game();
-        game.setBlocks(gameDTO.getBlocks());
+        if (gameDTO.getId() != 0) {game.setId(gameDTO.getId());}
+        game.setUsers(gameDTO.getUsers());
+        game.setBoard(gameDTO.getBoard());
         return game;
     }
 
     @Override
     public GameDTO toDTO(GameDTOInput gameDTOInput) {
-        return null;
+        GameDTO gameDTO = new GameDTO();
+        if (gameDTO.getId() != 0) {gameDTO.setId(gameDTOInput.getId());}
+        gameDTO.setUsers(gameDTOInput.getUsers());
+        gameDTO.setBoard(gameDTOInput.getBoard());
+        return gameDTO;
     }
-
 
     @Override
     public GameDTO toDTO(Game game) {
         GameDTO gameDTO = new GameDTO();
-        gameDTO.setId(game.getId());
-        gameDTO.setBlocks(game.getBlocks());
+        if (game.getId() != 0) {gameDTO.setId(game.getId());}
+        gameDTO.setUsers(game.getUsers());
+        gameDTO.setBoard(game.getBoard());
         return gameDTO;
     }
 
