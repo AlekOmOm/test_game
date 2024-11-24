@@ -8,8 +8,6 @@ import lombok.*;
 @Setter
 @Getter
 @ToString
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
 public class Board extends BaseEntity {
 
@@ -17,5 +15,15 @@ public class Board extends BaseEntity {
 
     private final int WIDTH = 50;
     private final int HEIGHT = 50;
+
+    public Board() {
+        blocks = new Block[WIDTH][HEIGHT];
+        for (int i = 0; i < WIDTH; i++) {
+            for (int j = 0; j < HEIGHT; j++) {
+                blocks[i][j] = new Block(i, j);
+            }
+        }
+    }
+
 
 }

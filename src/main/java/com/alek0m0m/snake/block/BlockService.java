@@ -12,4 +12,7 @@ public class BlockService extends BaseService<BlockDTOInput, BlockDTO, Block, Bl
         super(repository, mapper);
     }
 
+    // --------------------- Business Logic Operations ---------------------
+
+
 }

@@ -7,36 +7,24 @@ import org.springframework.stereotype.Service;
 public class BoardMapper extends EntityToDTOMapperImpl<BoardDTOInput, BoardDTO, Board> {
 
     @Override
-    public BoardDTO toDTO(BoardDTOInput dtoInput) {
-        BoardDTO dto = new BoardDTO();
-        dto.setId(dtoInput.getId());
-        dto.setName(dtoInput.getName());
-        dto.setEmail(dtoInput.getEmail());
-        dto.setPassword(dtoInput.getPassword());
-        dto.setRole(dtoInput.getRole());
-        return dto;
+    public Board toEntity(BoardDTO boardDTO) {
+        Board board = new Board();
+        board.setBlocks(boardDTO.getBlocks());
+        return board;
     }
 
     @Override
-    public Board toEntity(BoardDTO dto) {
-        Board entity = new Board();
-        entity.setId(dto.getId());
-        entity.setName(dto.getName());
-        entity.setEmail(dto.getEmail());
-        entity.setPassword(dto.getPassword());
-        entity.setRole(dto.getRole());
-        return entity;
+    public BoardDTO toDTO(BoardDTOInput boardDTOInput) {
+        return null;
     }
 
+
     @Override
-    public BoardDTO toDTO(Board entity) {
-        BoardDTO dto = new BoardDTO();
-        dto.setId(entity.getId());
-        dto.setName(entity.getName());
-        dto.setEmail(entity.getEmail());
-        dto.setPassword(entity.getPassword());
-        dto.setRole(entity.getRole());
-        return dto;
+    public BoardDTO toDTO(Board board) {
+        BoardDTO boardDTO = new BoardDTO();
+        boardDTO.setId(board.getId());
+        boardDTO.setBlocks(board.getBlocks());
+        return boardDTO;
     }
 
 }

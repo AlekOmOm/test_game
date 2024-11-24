@@ -12,4 +12,7 @@ public class SnakeService extends BaseService<SnakeDTOInput, SnakeDTO, Snake, Sn
         super(repository, mapper);
     }
 
+    // --------------------- Business methods ---------------------
+
+
 }
